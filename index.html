@@ -7,7 +7,7 @@
     <link href="output.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+  <!-- Header -->
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold tracking-wide text-gray-900">
@@ -19,11 +19,23 @@
             <a href="#pourquoi" class="hover:text-yellow-600 transition">Pourquoi nous</a>
             <a href="#contact" class="hover:text-yellow-600 transition">Contact</a>
         </nav>
-        <a href="#contact" class="bg-yellow-600 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-700 transition">
+        <a href="#contact" class="hidden md:block bg-yellow-600 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-700 transition">
             Nous contacter
         </a>
+        <!-- Bouton burger (mobile uniquement) -->
+        <button id="menu-btn" class="md:hidden text-gray-900 text-3xl">
+            ☰
+        </button>
     </div>
+    <!-- Menu mobile (caché par défaut) -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-gray-700 font-medium">
+        <a href="#services" class="hover:text-yellow-600 transition">Services</a>
+        <a href="#portfolio" class="hover:text-yellow-600 transition">Réalisations</a>
+        <a href="#pourquoi" class="hover:text-yellow-600 transition">Pourquoi nous</a>
+        <a href="#contact" class="hover:text-yellow-600 transition">Contact</a>
+    </nav>
 </header>
+
 
 <!-- Hero -->
 <section class="bg-white py-24">
@@ -167,5 +179,12 @@
         <p class="text-sm">© 2026 NTagency. Tous droits réservés.</p>
     </div>
 </footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
